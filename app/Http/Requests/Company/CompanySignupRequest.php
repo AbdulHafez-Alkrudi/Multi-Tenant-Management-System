@@ -24,7 +24,8 @@ class CompanySignupRequest extends FormRequest
         return [
             'name' => ['required'],
             'email' => ['required' , 'unique:companies,email'],
-            'password' => ['required' , 'min:8']
+            'password' => ['required' , 'min:8'],
+            'subscription_name' => ['required']
         ];
     }
 }

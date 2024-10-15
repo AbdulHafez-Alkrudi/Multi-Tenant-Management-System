@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Services\Company;
+namespace App\Services\Company;
 
 use App\Events\CompanyRegistered;
 use App\Models\Company;
@@ -17,7 +17,8 @@ class CompanyService
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
-            'invitation_code' => Str::random(100)
+            'invitation_code' => Str::random(100),
+            'subscription_name' => $request['subscription_name']
         ]);
         event(new CompanyRegistered($company->id, $request['name'], $request['email'], $request['password']));
         DB::commit();

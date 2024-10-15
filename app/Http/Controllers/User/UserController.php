@@ -6,7 +6,7 @@ use App\GeneralTrait;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\UserLoginRequest;
 use App\Http\Requests\User\UserSignupRequest;
-use App\Http\Services\User\UserService;
+use App\Services\User\UserService;
 use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
@@ -41,6 +41,11 @@ class UserController extends Controller
         } catch(\Throwable $th){
             return $this->sendError($th->getMessage(), $th->getCode());
         }
+    }
+
+    public function index()
+    {
+
     }
 
 }

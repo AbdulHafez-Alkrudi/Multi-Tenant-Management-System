@@ -20,10 +20,10 @@ class Company extends Model
     use HasFactory;
 
     protected $fillable = [
-        'company_id',
         'name',
         'email',
         'password',
+        'subscription_name',
         'invitation_code'
     ];
 
@@ -31,4 +31,8 @@ class Company extends Model
     {
         static::addGlobalScope(new CompanyScope);
     }*/
+    public function employees()
+    {
+        return $this->hasMany(User::class);
+    }
 }

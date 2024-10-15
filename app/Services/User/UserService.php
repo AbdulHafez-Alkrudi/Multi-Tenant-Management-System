@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Services\User;
+namespace App\Services\User;
 
 use App\Models\Company;
 use App\Models\User;
@@ -34,6 +34,7 @@ class UserService
         $user->givePermissionTo($permissions);
 
         $user->load('roles', 'permissions');
+        
         $user['token'] = $user->createToken('AccessToken')->plainTextToken;
         return $user;
 

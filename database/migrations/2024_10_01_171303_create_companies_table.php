@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('subscription_id')->default(1)->constrained('subscriptions');
+            $table->string('subscription_name')->default('free');
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');

@@ -5,8 +5,7 @@ namespace App\Http\Controllers\Company;
 use App\GeneralTrait;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Company\CompanySignupRequest;
-use App\Http\Services\Company\CompanyService;
-use Illuminate\Http\Request;
+use App\Services\Company\CompanyService;
 
 class CompanyController extends Controller
 {
