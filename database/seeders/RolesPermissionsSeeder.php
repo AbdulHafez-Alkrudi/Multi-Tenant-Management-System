@@ -21,6 +21,7 @@ class RolesPermissionsSeeder extends Seeder
         $teamLeaderRole = Role::create(['name' => 'teamLeader']);
         // Defining the permissions:
         $permissions = [
+            'view_all_staff',
             'create_project', 'view_project',
             'create_task', 'view_task',
             'send_message', 'view_messages',
